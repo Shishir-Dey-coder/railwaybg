@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title%}{% endblock%}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+   
+    <link rel="stylesheet" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        {% block custom-style %}{% endblock%}
+        footer {
+            position: fixed; /* Change to fixed position */
+            bottom: 0;
+            left: 0; /* Added to fix horizontal positioning */
+            width: 100%;
+            background-color: #343a40;
+            color: #f8f9fa;
+            padding: 10px 0; /* Added padding to improve spacing */
+            border-top: 1px solid white;
+            z-index: 1000; /* Ensure it's above other elements */
+        }
+        
+        body {
+            padding-bottom:0; /* Adjust padding to accommodate fixed footer */
+            overflow-x: hidden; /* Hide horizontal overflow */
+        }
+        
+        @media (max-width: 768px) {
+            footer {
+                position: static; /* Change to static position for smaller screens */
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home'%}">CREATIVE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'home'%}">Home
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %} {% endblock  %}
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Footer -->
+    <div style="buttom:0;" class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>About Us</h5>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+                </div>
+                <div class="col-md-2">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Home</a></li>
+                        <li><a href="#" class="text-light">Courses</a></li>
+                        <li><a href="#" class="text-light">About Us</a></li>
+                        <li><a href="#" class="text-light">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Blog</a></li>
+                        <li><a href="#" class="text-light">FAQs</a></li>
+                        <li><a href="#" class="text-light">Help Center</a></li>
+                        <li><a href="#" class="text-light">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Connect With Us</h5>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#" class="text-light"><i class="fab fa-facebook-f"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-light"><i class="fab fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-light"><i class="fab fa-linkedin"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-light"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>Contact</h5>
+                    <address class="text-muted">
+                        123 Street Name<br>
+                        City, Country<br>
+                        Phone: +1234567890<br>
+                        Email: info@example.com
+                    </address>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0 text-muted">Copyright&copy; {% now 'Y'%}. CREATIVE </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+{% extends "remover/base.html" %}
+{% block title %} Bg Remover || Download {% endblock %}
+{% block custom-style %}
+img {
+    border: 1.5px solid black;
+    max-height: 350px;
+}
+
+a {
+    margin-bottom: 30px; /* Corrected typo */
+}
+{% endblock %}
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Download</h3>
+                </div>
+                <div class="card-body" style="height: auto; width: auto;">
+                    <div class="card-body text-center">
+                        <img src="{{ image.rmbg_img.url }}" class="img-fluid" alt="Processed Image"><br>
+                        <a href="{% url 'download_image' image.id %}" class="btn btn-primary btn-block">Download Processed Image</a><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

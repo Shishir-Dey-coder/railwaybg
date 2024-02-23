@@ -1,0 +1,39 @@
+{% extends "remover/base.html" %}
+{% load static %}
+{% block title %} CREATIVE || Home {% endblock %}
+{% block content %}
+{% include "remover/msg.html" %}
+<!-- Main Content -->
+{% include "remover/msg.html" %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Professional Background Remover</h1>
+            <p class="lead">Easily remove backgrounds from your photos with our advanced background removal tool. Get professional-looking images in just a few clicks!</p>
+            <a href="{% url 'remove' %}" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="col-md-6">
+            <div class="card" style="padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <img src="{% static 'demo.png' %}" alt="Background Remover" class="img-fluid" style="border-top-left-radius: 10px; border-bottom-left-radius: 10px; height: 100%;">
+                <a href="{% url 'remove'%}" class="btn btn-primary btn-block">Try it now.</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Additional Content -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Upcoming Tools and Features</h2>
+            <p>Stay tuned for exciting updates and new features coming soon to our background remover tool:</p>
+            <ul>
+                <li>New background removal algorithms</li>
+                <li>Enhanced image editing capabilities</li>
+                <li>Integration with popular photo editing software</li>
+                <li>Improved user interface and experience</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
